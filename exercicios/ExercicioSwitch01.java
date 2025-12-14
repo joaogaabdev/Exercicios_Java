@@ -1,6 +1,6 @@
 package exercicios;
 import java.util.Scanner;
-public class exercicioSwitch01 {
+public class ExercicioSwitch01 {
     //Exercício de switch
 
     public static void main(String[] args) {

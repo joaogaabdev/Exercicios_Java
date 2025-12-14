@@ -2,7 +2,7 @@ package exercicios;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class exercicioWhile01 {
+public class ExercicioWhile01 {
     public static void main(String args []) {
         //fazer um programa para ler uma temperatura em Celsius e mostrar o equivalente em Fahrenreit. Perguntar se o
         //usuário deseja repetir (s/n). Caso o usuário digite "s", repetir o programa.
