@@ -14,7 +14,8 @@ public class ExercicioCurrencyConverter {
         double dolarPrice = scanner.nextDouble();
         System.out.print("How many dollars will be bought?");
         double quantityDollars = scanner.nextDouble();
-        System.out.printf("Amount to be paid in reais = %.2f", CurrencyConverter.convertToReais(quantityDollars, dolarPrice), IOF);
+        System.out.printf("Amount to be paid in reais = %.2f",
+                CurrencyConverter.convertToReais(quantityDollars, dolarPrice), IOF);
         scanner.close();
     }
 }
