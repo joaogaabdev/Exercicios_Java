@@ -38,29 +38,15 @@ public class Account {
     }
 
     public double getBalance() {
-        balance += depositValue - withdrawValue;
-        if (balance - withdrawValue < balance) {
-            balance = balance - withdrawValue - taxPerTransaction;
-        } else {
-            balance = balance;
-        }
-        return balance;
-    }
-
-    public double getDepositValue() {
-        return depositValue;
+        return depositValue - withdrawValue;
     }
 
     public void setDepositValue(double depositvalue) {
         this.depositValue = depositvalue;
     }
 
-    public double getWithdrawValue() {
-        return withdrawValue;
-    }
-
     public void setWithdrawValue(double withdrawValue) {
-        this.withdrawValue = withdrawValue;
+        this.withdrawValue = withdrawValue + taxPerTransaction;
     }
 
     public String toString() {
