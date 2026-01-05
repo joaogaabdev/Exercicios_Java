@@ -3,59 +3,50 @@ package entities;
 public class Account {
 
     private int accountNumber;
-    private String nameHolder;
+    private String holderName;
     private double balance;
-    private double depositValue;
-    private double withdrawValue;
-    public double taxPerTransaction = 5.00;
+
+    public static final double WITHDRAW_TAX = 5.00;
 
     public Account() {
     }
 
-    public Account(int accountNumber, String nameTitular) {
+    public Account(int accountNumber, String holderName) {
         this.accountNumber = accountNumber;
-        this.nameHolder = nameTitular;
-    }
-
-    public Account(double withdrawValue) {
-
+        this.holderName = holderName;
     }
 
     public int getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
+
+    public String getHolderName() {
+        return holderName;
     }
 
-    public String getNameTitular() {
-        return nameHolder;
-    }
-
-    public void setNameTitular(String nameTitular) {
-        this.nameHolder = nameTitular;
+    public void setHolderName(String holderName) {
+        this.holderName = holderName;
     }
 
     public double getBalance() {
-        return depositValue - withdrawValue;
+        return balance;
     }
 
-    public void setDepositValue(double depositvalue) {
-        this.depositValue = depositvalue;
+    public void Deposit(double amount) {
+        balance += amount;
     }
 
-    public void setWithdrawValue(double withdrawValue) {
-        this.withdrawValue = withdrawValue + taxPerTransaction;
+    public void Withdraw(double amount) {
+        balance -= amount + WITHDRAW_TAX;
     }
 
     public String toString() {
         return "Account "
                 + getAccountNumber()
                 + ", Holder: "
-                + getNameTitular()
+                + holderName
                 + ", Balance: $ "
                 + String.format("%.2f", getBalance());
     }
 }
-
