@@ -16,6 +16,11 @@ public class Account {
         this.holderName = holderName;
     }
 
+    public Account(int accountNumber, String holderName, double initialDeposit) {
+        this.accountNumber = accountNumber;
+        this.holderName = holderName;
+        deposit(initialDeposit);    }
+
     public int getAccountNumber() {
         return accountNumber;
     }
@@ -32,20 +37,20 @@ public class Account {
         return balance;
     }
 
-    public void Deposit(double amount) {
+    public void deposit(double amount) {
         balance += amount;
     }
 
-    public void Withdraw(double amount) {
+    public void withdraw(double amount) {
         balance -= amount + WITHDRAW_TAX;
     }
 
     public String toString() {
         return "Account "
-                + getAccountNumber()
+                + accountNumber
                 + ", Holder: "
                 + holderName
                 + ", Balance: $ "
-                + String.format("%.2f", getBalance());
+                + String.format("%.2f", balance);
     }
 }

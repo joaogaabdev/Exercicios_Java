@@ -8,40 +8,37 @@ public class ExercicioAccount {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner scanner = new Scanner(System.in);
-        String choice;
         double amount;
+        Account account;
 
         System.out.print("Enter account number: ");
         int accountNumber = scanner.nextInt();
         scanner.nextLine(); //para consumir o enter do input accountNumber, antes do próximo nextline.
         System.out.print("Enter account holder: ");
         String holderName = scanner.nextLine();
-        Account account = new Account(accountNumber, holderName);
-
         System.out.print("Is there na initial deposit value (y/n)? ");
-        choice = scanner.next();
-        if (choice .equals("y")) {
+        char response = scanner.next().charAt(0);
+        if (response == 'y') {
             System.out.print("Enter initial deposit value: ");
-            amount = scanner.nextDouble();
-            account.Deposit(amount);
-            System.out.println("Account data: ");
-            System.out.println(account);
-        } else if (choice .equals("n")) {
-            System.out.println("Account data:");
-            System.out.println(account);
+            double initialDeposit = scanner.nextDouble();
+            account = new Account(accountNumber, holderName, initialDeposit);
         } else {
-            System.out.println("Digite uma opção válida!");
+            account = new Account(accountNumber, holderName);
         }
 
-        System.out.print("Enter a deposit value: ");
+        System.out.println();
+        System.out.println("Account data: ");
+        System.out.println(account);
+
+       System.out.print("Enter a deposit value: ");
         amount = scanner.nextDouble();
-        account.Deposit(amount);
+        account.deposit(amount);
         System.out.println("Updated account data:");
         System.out.println(account);
 
         System.out.print("Enter a withdraw value: ");
         amount = scanner.nextDouble();
-        account.Withdraw(amount);
+        account.withdraw(amount);
         System.out.println("Updated account data:");
         System.out.println(account);
     }
