@@ -20,7 +20,6 @@ public class Account {
         return accountNumber;
     }
 
-
     public String getHolderName() {
         return holderName;
     }

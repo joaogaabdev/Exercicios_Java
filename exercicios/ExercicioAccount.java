@@ -29,8 +29,7 @@ public class ExercicioAccount {
         } else if (choice .equals("n")) {
             System.out.println("Account data:");
             System.out.println(account);
-        }
-        else {
+        } else {
             System.out.println("Digite uma opção válida!");
         }
 
