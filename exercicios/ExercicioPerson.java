@@ -30,7 +30,7 @@ public class ExercicioPerson {
 
         double sumAltura = 0.0;
         for (int i = 0; i < n; i++) {
-            sumAltura += vect[i].getAltura();
+              sumAltura += vect[i].getAltura();
         }
 
         int countUnder16 = 0; //Contador de pessaos com idade abaixo de 16
@@ -42,14 +42,16 @@ public class ExercicioPerson {
 
         double percentage = (double) countUnder16 / n * 100.00;
 
+        double avg = sumAltura / vect.length;
+
+        System.out.printf("Altura media: %.2f%n", avg);
+        System.out.printf("Pessoas com menos de 16 anos: %.1f%%%n", percentage);
+
         for (int i = 0; i < n; i++) {
             if (vect[i].getIdade() < 16) {
                 System.out.println(vect[i].getNome());
             }
         }
-        double avg = sumAltura / vect.length;
-
-        System.out.println("Altura media %.2f" + avg);
-        System.out.printf("Pessoas com menos de 16 anos: %.1f%%%n", percentage);
+        scanner.close();
     }
 }
